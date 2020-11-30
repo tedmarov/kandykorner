@@ -36,7 +36,7 @@ export const EmployeesForm = (props) => {
             but rather `.current.value` now in React.
         */
         const locationId = parseInt(location.current.value)
-        const hourlyRate = parseInt(pay.current.value) //May need to adjust to decimal places
+        const hourlyRate = pay.current.value.toFixed(2) //May need to adjust to decimal places
 
         if (locationId === 0) {
             window.alert("Please select a location")
@@ -77,13 +77,13 @@ export const EmployeesForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="manager">Is Manager? </label>
-                    <input type="checkbox" name="isManager" ref={manager} />
+                    <input type="checkbox" name="isManager" ref={manager} value={true} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="manager">Is FullTime? </label>
-                    <input type="checkbox" name="isFullTime" ref={status} />
+                    <input type="checkbox" name="isFullTime" ref={status} value={true} />
                 </div>
             </fieldset>
             <fieldset>
@@ -102,4 +102,5 @@ export const EmployeesForm = (props) => {
             </button>
         </form>
     )
-}// Console log the checkboxes for values
+}
+// Console log the checkboxes for values

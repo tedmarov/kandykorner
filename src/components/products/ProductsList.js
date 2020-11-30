@@ -15,6 +15,7 @@ export const ProductsList = () => {
     */
     useEffect(() => {
         console.log("Empty array is here")
+        console.log("Test")
         getProductTypes()
             .then(getProducts)
     }, [])
