@@ -6,6 +6,6 @@ export const Locations = ({ location }) => (
         <h3 className="location__name">{location.name}</h3>
         <address className="location__address">Location: {location.address}</address>
         <address className="location__sqfeet">Square Footage: {location.squareFootage}</address>
-        <address className="location__handicap">Handicap Accessible: {location.handicapAccessible}</address>
+        <address className="location__handicap">Handicap Accessible: {location.handicapAccessible ? "true" : "false"}</address>
     </section>
-)
+)   
