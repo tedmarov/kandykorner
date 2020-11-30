@@ -1,10 +1,17 @@
 import React from "react"
-import { LocationsList } from "./locations/LocationsList.js"
-import { LocationsProvider } from "./locations/LocationsProvider.js"
+import { Route } from "react-router-dom"
+import { NavBar } from "./nav/NavBar"
+import { ApplicationViews } from "./ApplicationViews"
 import "./KandyKorner.css"
 
 export const KandyKorner = () => (
     <>
+        <NavBar />
+        <ApplicationViews />
+    </>
+)
+
+/* <>
         <h2>Kandy Korner</h2>
         <small>Kandy for kids</small>
 
@@ -12,5 +19,10 @@ export const KandyKorner = () => (
         <LocationsProvider>
             <LocationsList />
         </LocationsProvider>
+
+        <h2>Products</h2>
+        <ProductsProvider>
+            <ProductsList />
+        </ProductsProvider>
     </>
-)
+) */
