@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react"
-import { LocationsContext } from "./LocationsProvider.js"
+import { LocationContext } from "./LocationsProvider.js"
 import { Locations } from "./Locations.js"
 import "./Locations.css"
 
 export const LocationsList = () => {
     //State changes when getLocations() is invoked
-    const { locations, getLocations } = useContext(LocationsContext)
+    const { locations, getLocations } = useContext(LocationContext)
 
     /*
         Component mounted to the DOM. React renders blank first,
