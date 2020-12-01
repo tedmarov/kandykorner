@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react"
 /*
     The context is imported and used by components
 */
-export const ProductsContext = React.createContext()
+export const ProductContext = React.createContext()
 
 /*  
     This establishes what can be used
 */
 
-export const ProductsProvider = (props) => {
+export const ProductProvider = (props) => {
     const [products, setProducts] = useState([])
     // useState returns [initial value of state variable, 
     // a function to set the value of the state variable]
@@ -37,10 +37,10 @@ export const ProductsProvider = (props) => {
         as keys. This allows access for any child elements.
     */
     return (
-        <ProductsContext.Provider value={{
+        <ProductContext.Provider value={{
             products, addProduct, getProducts
         }}>
             {props.children}
-        </ProductsContext.Provider>
+        </ProductContext.Provider>
     )
 }

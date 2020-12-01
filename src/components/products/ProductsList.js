@@ -1,13 +1,14 @@
 import React, { useContext, useEffect } from "react"
-import { ProductTypesContext } from "./ProductTypesProvider.js"
-import { ProductsContext } from "./ProductsProvider.js"
+import { ProductTypeContext } from "./ProductTypesProvider.js"
+import { ProductContext } from "./ProductsProvider.js"
 import { Products } from "./Products.js"
 import "./Products.css"
 
 export const ProductsList = () => {
     //State changes when getProducts() is invoked
-    const { productTypes, getProductTypes } = useContext(ProductTypesContext)
-    const { products, getProducts } = useContext(ProductsContext)
+    console.log("Test")
+    const { productTypes, getProductTypes } = useContext(ProductTypeContext)
+    const { products, getProducts } = useContext(ProductContext)
 
     /*
         Component mounted to the DOM. React renders blank first,

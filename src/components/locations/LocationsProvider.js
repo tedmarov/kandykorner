@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 /*
     The context is imported and used by components
 */
-export const LocationsContext = React.createContext()
+export const LocationContext = React.createContext()
 
 /*  
     This establishes what can be used
@@ -37,10 +37,10 @@ export const LocationsProvider = (props) => {
         as keys. This allows access for any child elements.
     */
     return (
-        <LocationsContext.Provider value={{
+        <LocationContext.Provider value={{
             locations, addLocation, getLocations
         }}>
             {props.children}
-        </LocationsContext.Provider>
+        </LocationContext.Provider>
     )
 }
