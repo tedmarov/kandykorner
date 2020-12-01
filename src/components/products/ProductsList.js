@@ -30,6 +30,7 @@ export const ProductsList = () => {
 
     return (
         <div className="products">
+            <h2>Products</h2>
             {
                 products.map(product => {
                     const separator = productTypes.find(pT => pT.id === product.productTypeId)
