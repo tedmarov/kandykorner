@@ -2,7 +2,7 @@ import React from "react"
 import { Route } from "react-router-dom"
 import { LocationsProvider } from "./locations/LocationsProvider.js"
 import { LocationsList } from "./locations/LocationsList.js"
-import { ProductsProvider } from "./products/ProductsProvider.js"
+import { ProductProvider } from "./products/ProductsProvider.js"
 import { ProductsList } from "./products/ProductsList.js"
 import { ProductTypesProvider } from "./products/ProductTypesProvider.js"
 import { EmployeesProvider } from "./employees/EmployeesProvider.js"
@@ -19,13 +19,13 @@ export const ApplicationViews = (props) => {
                 </Route>
             </LocationsProvider>
 
-            <ProductsProvider>
+            <ProductProvider>
                 <ProductTypesProvider>
                     <Route path="/products">
                         <ProductsList />
                     </Route>
                 </ProductTypesProvider>
-            </ProductsProvider>
+            </ProductProvider>
 
             <EmployeesProvider>
                 <LocationsProvider>

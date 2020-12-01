@@ -17,7 +17,7 @@ export const EmployeesForm = (props) => {
     */
     const name = useRef(null)
     const location = useRef(null)
-    const manager = useRef(null)
+    const manager = useRef(false)
     const status = useRef(null)
     const pay = useRef(null)
 
@@ -36,7 +36,9 @@ export const EmployeesForm = (props) => {
             but rather `.current.value` now in React.
         */
         const locationId = parseInt(location.current.value)
-        const hourlyRate = pay.current.value.toFixed(2) //May need to adjust to decimal places
+        const hourlyRate = pay.current.value //May need to adjust to decimal places
+        const isManager = manager.current.checked
+        const isFullTime = status.current.checked
 
         if (locationId === 0) {
             window.alert("Please select a location")
@@ -44,8 +46,8 @@ export const EmployeesForm = (props) => {
             addEmployee({
                 name: name.current.value,
                 locationId,
-                isManager: manager.current.value,
-                isFullTime: status.current.value,
+                isManager,
+                isFullTime,
                 hourlyRate
             })
                 .then(() => props.history.push("/employees"))
@@ -77,13 +79,13 @@ export const EmployeesForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="manager">Is Manager? </label>
-                    <input type="checkbox" name="isManager" ref={manager} value={true} />
+                    <input type="checkbox" ref={manager} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="manager">Is FullTime? </label>
-                    <input type="checkbox" name="isFullTime" ref={status} value={true} />
+                    <label htmlFor="status">Is FullTime? </label>
+                    <input type="checkbox" ref={status} />
                 </div>
             </fieldset>
             <fieldset>

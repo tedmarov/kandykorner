@@ -9,7 +9,7 @@ export const ProductContext = React.createContext()
     This establishes what can be used
 */
 
-export const ProductsProvider = (props) => {
+export const ProductProvider = (props) => {
     const [products, setProducts] = useState([])
     // useState returns [initial value of state variable, 
     // a function to set the value of the state variable]

@@ -6,6 +6,7 @@ import "./Products.css"
 
 export const ProductsList = () => {
     //State changes when getProducts() is invoked
+    console.log("Test")
     const { productTypes, getProductTypes } = useContext(ProductTypeContext)
     const { products, getProducts } = useContext(ProductContext)
 
@@ -15,7 +16,6 @@ export const ProductsList = () => {
     */
     useEffect(() => {
         console.log("Empty array is here")
-        console.log("Test")
         getProductTypes()
             .then(getProducts)
     }, [])
