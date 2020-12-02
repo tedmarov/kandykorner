@@ -19,17 +19,19 @@ export const LocationsList = () => {
     /*
         The effect it is responding to is that the location changed
     */
-    useEffect(() => {
-        console.log("Empty array state change")
-        console.log(locations)
-    }, [locations])
+    // useEffect(() => {
+    //     console.log("Empty array state change")
+    //     console.log(locations)
+    // }, [locations])
 
     return (
-        <div className="locations">
-            <h2>Locations</h2>
-            {
-                locations.map(l => <Locations key={l.id} location={l} />)
-            }
-        </div>
+        <>
+            <div className="locations">
+                <h2>Locations</h2>
+                {
+                    locations.map(l => <Locations key={l.id} location={l} />)
+                }
+            </div>
+        </>
     )
 }
